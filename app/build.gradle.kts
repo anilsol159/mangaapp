@@ -45,7 +45,7 @@ android {
 
 dependencies {
 
-    implementation(libs.play.services.mlkit.face.detection)
+//    implementation(libs.play.services.mlkit.face.detection)
     //    Room
     val room_version = "2.6.1"
 

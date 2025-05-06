@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mangaapp.domain.usecase.GetCurrentUserUseCase
 import com.example.mangaapp.domain.usecase.LoginUseCase
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -25,6 +26,9 @@ class SignInViewModel @Inject constructor(
 
     private val _password = MutableStateFlow("")
     val password: StateFlow<String> = _password.asStateFlow()
+
+    private val _shouldSkipSignIn = MutableStateFlow(false)
+    val shouldSkipSignIn: StateFlow<Boolean> = _shouldSkipSignIn.asStateFlow()
 
     fun checkIfUserLoggedIn() {
         viewModelScope.launch {
@@ -56,5 +60,15 @@ class SignInViewModel @Inject constructor(
                     _signInState.value = SignInState.Error(exception.message ?: "Unknown error")
                 }
         }
+    }
+
+    // Function to skip sign in (when user presses back/close)
+    fun skipSignIn() {
+        _shouldSkipSignIn.value = true
+    }
+
+    // Reset skip state (after navigating to home)
+    fun resetSkipState() {
+        _shouldSkipSignIn.value = false
     }
 }
