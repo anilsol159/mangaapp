@@ -5,16 +5,16 @@ A clean architecture Android application with user authentication, manga browsin
 ## Screenshots
 
 ### Sign In Screen
-![Sign In Screen](screenshots/1.jpg)
+<img src="screenshots/1.jpg" width="300" alt="Sign In Screen">
 
 ### Manga List Screen
-![Manga List Screen](screenshots/2.jpg)
+<img src="screenshots/2.jpg" width="300" alt="Manga List Screen">
 
 ### Manga Detail Screen
-![Manga Detail Screen](screenshots/3.jpg)
+<img src="screenshots/3.jpg" width="300" alt="Manga Detail Screen">
 
 ### Face Detection Screen
-![Face Detection Screen](screenshots/4.jpg)
+<img src="screenshots/4.jpg" width="300" alt="Face Detection Screen">
 
 ## Demo Video
 
